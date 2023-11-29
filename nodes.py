@@ -70,12 +70,12 @@ class SendImageWebSocket:
             server = PromptServer.instance
             server.send_sync(
                 BinaryEventTypes.UNENCODED_PREVIEW_IMAGE,
-                ["PNG", image, None],
+                ["JPG", image, None],
                 server.client_id,
             )
             results.append(
                 # Could put some kind of ID here, but for now just match them by index
-                {"source": "websocket", "content-type": "image/png", "type": "output"}
+                {"source": "websocket", "content-type": "image/jpeg", "type": "output"}
             )
 
         return {"ui": {"images": results}}
