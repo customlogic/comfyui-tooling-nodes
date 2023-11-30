@@ -70,7 +70,7 @@ class SendImageWebSocket:
             server = PromptServer.instance
             server.send_sync(
                 BinaryEventTypes.UNENCODED_PREVIEW_IMAGE,
-                ["JPG", image, None],
+                ["JPEG", image, None],
                 server.client_id,
             )
             results.append(
